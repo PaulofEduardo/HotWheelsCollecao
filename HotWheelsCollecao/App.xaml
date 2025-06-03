@@ -1,0 +1,25 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:HotWheelsCollecao"
+             x:Class="HotWheelsCollecao.App">
+    <Application.Resources>
+        <Color x:Key="HotWheelsBlue">#007AFF</Color>
+        <Color x:Key="HotWheelsOrange">#FF3C00</Color>
+        <Color x:Key="HotWheelsYellow">#FFD700</Color>
+
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource HotWheelsBlue}" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="10,5" />
+        </Style>
+
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="Margin" Value="0,5" />
+        </Style>
+
+    </Application.Resources>
+</Application>

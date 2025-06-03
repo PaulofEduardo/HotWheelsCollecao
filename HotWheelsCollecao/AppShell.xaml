@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="HotWheelsCollecao.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:HotWheelsCollecao.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Title="Hot Wheels Collector">
+
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="#FF3C00" Padding="10">
+            <Image Source="hotwheels_banner.png"
+                   Aspect="AspectFit"
+                   HeightRequest="80"
+                   VerticalOptions="Center" />
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Cadastro" Icon="add.png">
+        <ShellContent ContentTemplate="{DataTemplate views:CadastroPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Lista de Carrinhos" Icon="list.png">
+        <ShellContent ContentTemplate="{DataTemplate views:ListaPage}" />
+    </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="10">
+            <Label Text="v1.0.0" FontSize="Micro" HorizontalOptions="Center" TextColor="Gray"/>
+            <Label Text="Grupo: Seu Nome Aqui" FontSize="Micro" HorizontalOptions="Center" TextColor="Gray"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
+
+</Shell>

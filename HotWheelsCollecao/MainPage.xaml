@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="HotWheelsCollecao.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Início"
+    BackgroundColor="#FFD700">
+
+    <StackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+
+        <Image Source="hotwheels_logo.png"
+               HeightRequest="120"
+               HorizontalOptions="Center" />
+
+        <Label Text="Hot Wheels Collector"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="#FF3C00" />
+
+        <Button Text="Cadastrar Carrinho"
+                Clicked="OnCadastroClicked"
+                BackgroundColor="#007AFF" />
+
+        <Button Text="Ver Coleção"
+                Clicked="OnListaClicked"
+                BackgroundColor="#FF3C00" />
+
+    </StackLayout>
+</ContentPage>

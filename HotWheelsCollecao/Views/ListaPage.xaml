@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="HotWheelsCollecao.Views.ListaPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Lista de Carrinhos"
+    BackgroundColor="White">
+
+    <StackLayout Padding="10" Spacing="10">
+
+        <SearchBar x:Name="searchBarModelo"
+                   Placeholder="Buscar por modelo"
+                   TextChanged="OnFiltroAlterado" />
+
+        <StackLayout Orientation="Horizontal" Spacing="20">
+            <CheckBox x:Name="chkObtido" CheckedChanged="OnFiltroAlterado" />
+            <Label Text="Obtidos" VerticalOptions="Center" />
+            <CheckBox x:Name="chkDesejado" CheckedChanged="OnFiltroAlterado" />
+            <Label Text="Desejados" VerticalOptions="Center" />
+        </StackLayout>
+
+        <CollectionView x:Name="collectionViewCarrinhos"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BorderColor="LightGray" CornerRadius="10" Padding="10" Margin="0,5">
+                        <Grid ColumnDefinitions="Auto,*,Auto,Auto,Auto" RowDefinitions="Auto">
+
+                            <Image Source="{Binding FotoPath}"
+                                   WidthRequest="60" HeightRequest="60"
+                                   Grid.RowSpan="2" />
+
+                            <StackLayout Grid.Column="1">
+                                <Label Text="{Binding Modelo}" FontAttributes="Bold" />
+                                <Label Text="{Binding Lote}" />
+                                <Label Text="{Binding Ano}" FontSize="Small" />
+                            </StackLayout>
+
+                            <ImageButton Grid.Column="2"
+                                         Source="{Binding ObtidoIcon}"
+                                         Clicked="OnToggleObtidoClicked"
+                                         CommandParameter="{Binding .}" />
+
+                            <ImageButton Grid.Column="3"
+                                         Source="{Binding DesejadoIcon}"
+                                         Clicked="OnToggleDesejadoClicked"
+                                         CommandParameter="{Binding .}" />
+
+                            <ImageButton Grid.Column="4"
+                                         Source="trash.png"
+                                         Clicked="OnDeleteClicked"
+                                         CommandParameter="{Binding .}" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
